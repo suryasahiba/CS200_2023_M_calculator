@@ -21,6 +21,7 @@ def ADD():
 #add your functions below
 
 
+
 #Three Musketeers
 @app.route("/bitwise_or", methods=["POST"])
 def Bitwise_OR(): 
@@ -38,10 +39,8 @@ def Bitwise_OR():
 def multiplication(): 
     jsonStr = request.get_json()
     jsonObj = json.loads(jsonStr)
-    
     a=int(jsonObj['N1'])
     b=int(jsonObj['N2'])
-    # write code for your_function
     c=a*b
     c=str(c)
     response = c
