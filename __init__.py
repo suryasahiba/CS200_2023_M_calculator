@@ -162,7 +162,7 @@ def Min():
         return str(b)
 
 @app.route("/shiftright", methods=["POST"])
-def Shiftright(): 
+def shiftright(): 
 
     jsonStr = request.get_json()
     jsonObj = json.loads(jsonStr)
