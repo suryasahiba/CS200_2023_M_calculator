@@ -393,7 +393,15 @@ def LOGICAL_OR():
  
  
  
- 
+ @app.route("/bnand", methods=["POST"])
+def BNAND():
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    a = int(jsonObj["N1"])
+    b = int(jsonObj["N2"])
+    bnand=~(a&b)
+    response = str(bnand)  # "sum = " + str(sum)
+    return response
  
  
  
