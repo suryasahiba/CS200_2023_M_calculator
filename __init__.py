@@ -14,7 +14,6 @@ def home():
 def ADD():
     jsonStr = request.get_json()
     jsonObj = json.loads(jsonStr)
-<<<<<<< HEAD
     a = int(jsonObj["N1"])
     b = int(jsonObj["N2"])
     sum = a + b
@@ -27,7 +26,7 @@ def ADD():
 
 @app.route("/mutiplication", methods=["POST"])
 def multiplication():
-=======
+
 
 
 @app.route("/is_equal", methods=["POST"])
@@ -45,7 +44,6 @@ def IS_EQUAL():
 
 @app.route("/multiplication", methods=["POST"])
 def multiplication(): 
->>>>>>> f895cb6ed3a2aa76e2648fcc34e20b09e4e7a80a
     jsonStr = request.get_json()
     jsonObj = json.loads(jsonStr)
 
@@ -59,10 +57,9 @@ def multiplication():
 
 @app.route("/bitwise-nor", methods=["POST"])
 def BitwiseNor(): 
-<<<<<<< HEAD
-=======
 
->>>>>>> f895cb6ed3a2aa76e2648fcc34e20b09e4e7a80a
+
+
     jsonStr = request.get_json()
     jsonObj = json.loads(jsonStr)
     
@@ -70,11 +67,11 @@ def BitwiseNor():
     b=int(jsonObj['N2'])
     # write code for your_function
 
-<<<<<<< HEAD
+
     c=~(a| b)
     c=str(c)
     response = c
-=======
+
     if a == b:
     	response = "Equal"
     else:
@@ -87,8 +84,26 @@ def BitwiseNor():
     response = c
     return response
 
+
 @app.route("/LOGICALAND", methods=["POST"])
 def LOGICALAND(): 
+
+#function for finding the minimum of two number
+@app.route("/Min", methods=["POST"])
+def Min(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    
+    if a < b:
+        return str(a)
+    else:
+        return str(b)
+
+
+
 
     jsonStr = request.get_json()
     jsonObj = json.loads(jsonStr)
@@ -113,13 +128,13 @@ def isDiff():
     	ans=1
     response = str(ans)
 
->>>>>>> f895cb6ed3a2aa76e2648fcc34e20b09e4e7a80a
+
     return response
 
 @app.route("/LOGICALAND", methods=["POST"])
 def LOGICALAND(): 
 
-<<<<<<< HEAD
+
     jsonStr = request.get_json()
     jsonObj = json.loads(jsonStr)
     
@@ -185,7 +200,6 @@ def HCF():
     return response  
 
 
-=======
->>>>>>> f895cb6ed3a2aa76e2648fcc34e20b09e4e7a80a
+
 if __name__ == "__main__":
     app.run()
