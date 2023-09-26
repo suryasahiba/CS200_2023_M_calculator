@@ -20,15 +20,19 @@ def ADD():
     return response
 #add your functions below
 
-@app.route("/your_function", methods=["POST"])
-def your_function(): 
+@app.route("/HCF", methods=["POST"])
+def HCF(): 
     jsonStr = request.get_json()
     jsonObj = json.loads(jsonStr)
     
     a=int(jsonObj['N1'])
     b=int(jsonObj['N2'])
     # write code for your_function
-    response = "your_function"
+    
+    while b:
+        a, b = b, a % b
+  
+    response = str(a)
     return response
 
 
