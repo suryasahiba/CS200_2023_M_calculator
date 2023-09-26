@@ -45,6 +45,7 @@ def left_shift():
     return response
 
 
+
 #HashGuild- Logical OR
 
 @app.route("/LOGICAL_OR", methods=["POST"])
@@ -61,6 +62,33 @@ def LOGICAL_OR():
     response=str(a or b)
     return response
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@app.route("/xor", methods=["POST"])
+def XOR(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    xor=a^b
+    response = str(xor)                                #"sum = " + str(sum)
+    return response
+#add your functions below
 
 if __name__== "__main__":
     app.run()
