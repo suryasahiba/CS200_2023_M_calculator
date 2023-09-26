@@ -14,6 +14,7 @@ def home():
 def ADD():
     jsonStr = request.get_json()
     jsonObj = json.loads(jsonStr)
+
     a = int(jsonObj["N1"])
     b = int(jsonObj["N2"])
     sum = a + b
@@ -47,9 +48,8 @@ def rightshift():
     c= str(number >> b)
     return c
     
-@app.route("/mutiplication", methods=["POST"])
-def multiplication():
-
+#@app.route("/mutiplication", methods=["POST"])
+#def multiplication():
 
 
 
@@ -82,16 +82,17 @@ def multiplication():
     return response
 
 
-@app.route("/bitwise-nor", methods=["POST"])
-def BitwiseNor(): 
+#@app.route("/bitwise-nor", methods=["POST"])
+#def BitwiseNor(): 
 
 
 
-@app.route("/Exponentiation", methods=["POST"])
-def Exponentiation(): 
+#@app.route("/Exponentiation", methods=["POST"])
+#def Exponentiation(): 
 
 
-
+@app.route("/mutiplication", methods=["POST"])
+def multiplication(): 
     jsonStr = request.get_json()
     jsonObj = json.loads(jsonStr)
     
@@ -111,9 +112,6 @@ def left_shift():
     b=int(jsonObj['N2'])
     
     # write code for your_function
-
-
-
 
     c=~(a| b)
     c=str(c)
@@ -254,6 +252,9 @@ def left_shift():
     #response = "your_function"
 
     c=~(a| b)
+
+    c=a*b
+
     c=str(c)
     response = c
     return response
@@ -313,6 +314,11 @@ def isDiff():
     else:
     	ans=1
     response = str(ans)
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 6235b16 (added_multiplication__init__.py cherry-pick)
     return response
 
 @app.route("/Exponentiation", methods=["POST"])
@@ -504,6 +510,7 @@ def HCF():
 
 
 
+<<<<<<< HEAD
 
 
 #HashGuild- Logical OR
@@ -551,6 +558,8 @@ def MODULUS():
 
 
 
+=======
+>>>>>>> 6235b16 (added_multiplication__init__.py cherry-pick)
 if __name__ == "__main__":
 
     app.run()
