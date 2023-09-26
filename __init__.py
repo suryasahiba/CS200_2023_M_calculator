@@ -38,17 +38,8 @@ def Bitwise_OR():
     return response
 	
 
-@app.route("/mutiplication", methods=["POST"])
-def multiplication():
-
-
-
-
 @app.route("/is_equal", methods=["POST"])
-def IS_EQUAL(): 
-
-
-
+def is_equal(): 
     a = int(jsonObj["N1"])
     b = int(jsonObj["N2"])
     sum = a + b
@@ -71,10 +62,6 @@ def multiplication():
     c = str(c)
     response = c
     return response
-
-
-@app.route("/bitwise-nor", methods=["POST"])
-def BitwiseNor(): 
 
 
 
@@ -128,8 +115,6 @@ def left_shift():
     return response
 
 
-@app.route("/LOGICALAND", methods=["POST"])
-def LOGICALAND(): 
 
 
 #function for finding the minimum of two number
@@ -291,8 +276,7 @@ def LOGICALAND():
 
 
     
-@app.route("/isDiff", methods=["POST"])
-def isDiff(): 
+ 
 
 @app.route("/Exponentiation", methods=["POST"])
 def Exponentiation(): 
@@ -330,7 +314,7 @@ def left_shift():
 @app.route("/is_equal", methods=["POST"])
 def IS_EQUAL(): 
 
-	jsonStr = request.get_json()
+    jsonStr = request.get_json()
     jsonObj = json.loads(jsonStr)
     
     a=int(jsonObj['N1'])
@@ -467,19 +451,7 @@ def left_dec():
  
 
  
-@app.route("/HCF", methods=["POST"])
-def HCF():
-    jsonStr = request.get_json()
-    jsonObj = json.loads(jsonStr)
 
-    a = int(jsonObj["N1"])
-    b = int(jsonObj["N2"])
-    # write code for your_function
-   while b:
-        a, b = b, a % b
-  
-    response = str(a)
-    return response  
 
 
 
