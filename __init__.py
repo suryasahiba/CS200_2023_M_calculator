@@ -34,6 +34,21 @@ def multiplication():
     return response
 
 #function for finding the minimum of two number
+@app.route("/reporiots", methods=["POST"])
+def Reporiots(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    number = float(jsonObj['N1'])
+    n = float(jsonObj['N2'])
+
+    print(number)
+    print(n)
+    
+    result = math.pow(number, 1/n)  # Calculate the nth root using math.pow
+    print(result)
+    response = str(result)
+    return response
 @app.route("/Min", methods=["POST"])
 def Min(): 
     jsonStr = request.get_json()
