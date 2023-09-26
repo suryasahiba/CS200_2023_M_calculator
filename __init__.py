@@ -37,7 +37,16 @@ def Bitwise_OR():
     response = str(bit_or)                            
     return response
 	
-
+@app.route("/rightshift", methods=["POST"])
+def rightshift(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    number=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    c= str(number >> b)
+    return c
+    
 @app.route("/mutiplication", methods=["POST"])
 def multiplication():
 
