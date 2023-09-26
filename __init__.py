@@ -15,6 +15,7 @@ def ADD():
     jsonStr = request.get_json()
     jsonObj = json.loads(jsonStr)
 
+<<<<<<< HEAD
     a = int(jsonObj["N1"])
     b = int(jsonObj["N2"])
     sum = a + b
@@ -40,15 +41,36 @@ def multiplication():
 
 @app.route("/bitwise-nor", methods=["POST"])
 def BitwiseNor(): 
+=======
+@app.route("/Exponentiation", methods=["POST"])
+def Exponentiation(): 
+>>>>>>> 11e0342b41a85369ad80fb087ef77281dc9db939
     jsonStr = request.get_json()
     jsonObj = json.loads(jsonStr)
     
     a=int(jsonObj['N1'])
     b=int(jsonObj['N2'])
+    value=a**b
+    response = str(value) 
+    return response
+    
+@app.route("/left_shift", methods=["POST"])
+def left_shift(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    
     # write code for your_function
+<<<<<<< HEAD
     c=~(a| b)
     c=str(c)
     response = c
+=======
+    left= a << b
+    response = str(left)                                #"sum = " + str(sum)
+>>>>>>> 11e0342b41a85369ad80fb087ef77281dc9db939
     return response
 
 @app.route("/LOGICALAND", methods=["POST"])

@@ -44,6 +44,7 @@ function showOutput(output) {
   //var division = document.getElementById("output_div");
   var res = document.getElementById("res");
   res.value = output;
+  
   // if (division === null || division == "undefined") {
   // 	division = document.createElement("div");
   // 	division.setAttribute("id", "output_div");
