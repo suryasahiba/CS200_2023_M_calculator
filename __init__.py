@@ -118,6 +118,7 @@ def LOGICAL_OR():
     #response=str(logical)
     response=str(a or b)
     return response
+    
 @app.route("/antilog", methods=["POST"])
 def antilog(): 
     jsonStr = request.get_json()
@@ -127,6 +128,7 @@ def antilog():
     antilog=math.pow(10,a)
     response = str(antilog)                                
     return response
+
 @app.route("/modulus", methods=["POST"])
 def MODULUS(): 
     jsonStr = request.get_json()
