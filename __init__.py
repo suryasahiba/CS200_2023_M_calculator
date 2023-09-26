@@ -20,15 +20,17 @@ def ADD():
     return response
 #add your functions below
 
-@app.route("/your_function", methods=["POST"])
-def your_function(): 
+@app.route("/mutiplication", methods=["POST"])
+def multiplication(): 
     jsonStr = request.get_json()
     jsonObj = json.loads(jsonStr)
     
     a=int(jsonObj['N1'])
     b=int(jsonObj['N2'])
     # write code for your_function
-    response = "your_function"
+    c=a*b
+    c=str(c)
+    response = c
     return response
 
 
