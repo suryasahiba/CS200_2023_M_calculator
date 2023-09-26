@@ -50,9 +50,25 @@ def Bitwise_OR():
     response = str(bit_or)                            
     return response
 	
-
+@app.route("/rightshift", methods=["POST"])
+def rightshift(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    number=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    c= str(number >> b)
+    return c
+    
 @app.route("/mutiplication", methods=["POST"])
 def multiplication():
+
+
+
+
+@app.route("/is_equal", methods=["POST"])
+def IS_EQUAL(): 
+
 
 
     a = int(jsonObj["N1"])
@@ -84,13 +100,32 @@ def BitwiseNor():
 
 
 
+@app.route("/Exponentiation", methods=["POST"])
+def Exponentiation(): 
+
+
 
     jsonStr = request.get_json()
     jsonObj = json.loads(jsonStr)
     
     a=int(jsonObj['N1'])
     b=int(jsonObj['N2'])
+
+    value=a**b
+    response = str(value) 
+    return response
+    
+@app.route("/left_shift", methods=["POST"])
+def left_shift(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    
     # write code for your_function
+
+
 
 
     c=~(a| b)
@@ -104,9 +139,14 @@ def BitwiseNor():
     
     #response = "your_function"
 
+
     c=~(a| b)
     c=str(c)
     response = c
+
+    left= a << b
+    response = str(left)                                #"sum = " + str(sum)
+
     return response
 
 
@@ -144,7 +184,7 @@ def Min():
         return str(b)
 
 @app.route("/shiftright", methods=["POST"])
-def Shiftright(): 
+def shiftright(): 
 
     jsonStr = request.get_json()
     jsonObj = json.loads(jsonStr)
@@ -188,16 +228,6 @@ def left_shift():
     response = str(left)                                #"sum = " + str(sum)
     return response
 
-@app.route("/modulus", methods=["POST"])
-def MODULUS(): 
-    jsonStr = request.get_json()
-    jsonObj = json.loads(jsonStr)
-    
-    a=int(jsonObj['N1'])
-    b=int(jsonObj['N2'])
-    mod=a%b
-    response = str(mod)                                #"sum = " + str(sum)
-    return response
 
 
 
@@ -221,6 +251,7 @@ def MODULUS():
     ans= a and b
     response = "Logical AND is = " + str(ans)
     return response
+
 
 
 
@@ -280,9 +311,22 @@ def LOGICALAND():
     return response
     
 
+
     
 @app.route("/isDiff", methods=["POST"])
-def isDiff(): 
+def isDiff():
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    # write code for your_function
+    if a == b:
+    	ans=0
+    else:
+    	ans=1
+    response = str(ans)
+    return response
 
 @app.route("/Exponentiation", methods=["POST"])
 def Exponentiation(): 
@@ -380,7 +424,7 @@ def LOGICAL_OR():
     
     
  
-
+#Breaking branches rocks
 @app.route("/bnand", methods=["POST"])
 def bnand():
     jsonStr = request.get_json()
@@ -397,6 +441,29 @@ def bnand():
     return response
 
 
+@app.route("/xor", methods=["POST"])
+def xor(): 
+
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    value=a^b
+    response = str(value) 
+    return response
+    
+    
+@app.route("/left_dec", methods=["POST"])
+def left_dec(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    left=a/(10**b)
+    response = str(left)                                #NightConquerors
+    return response
 
 
 
@@ -406,7 +473,6 @@ def bnand():
 
 
 
-
  
  
  
@@ -424,6 +490,35 @@ def bnand():
  
  
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ @app.route("/bnand", methods=["POST"])
+def BNAND():
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    a = int(jsonObj["N1"])
+    b = int(jsonObj["N2"])
+    bnand=~(a&b)
+    response = str(bnand)  # "sum = " + str(sum)
+    return response
  
  
  
@@ -451,5 +546,90 @@ def HCF():
 
 
 
+
+#HashGuild- Logical OR
+
+@app.route("/LOGICAL_OR", methods=["POST"])
+def LOGICAL_OR():
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    # write code for your_function
+
+    #logical=a|b
+    #response=str(logical)
+    response=str(a or b)
+    return response
+    
+@app.route("/MAX", methods=["POST"])
+def MAX(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    # write code for your_function
+    if a > b:
+        MAX = a
+    else:
+        MAX = b
+    response = str(MAX)
+    return response
+
+@app.route("/modulus", methods=["POST"])
+
+def MODULUS(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    mod=a%b
+    response = str(mod)                                #"sum = " + str(sum)
+    return response
+@app.route("/leftshift", methods=["POST"])
+def leftshift(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    leftshift = a<<b
+    # write code for your_function
+    response = str(leftshift)
+    return response
+
+@app.route("/antilog", methods=["POST"])
+def antilog(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    antilog=math.pow(10,a)
+    response = str(antilog)   
+                                 
+    return response
+
+
+@app.route("/div", methods=["POST"])
+def div(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    
+    if b != 0:
+        div_result = a / b
+        response = str(div_result)
+    else:
+        response = "Division by zero is not allowed."
+
+    return response
+
+
 if __name__ == "__main__":
+
     app.run()
