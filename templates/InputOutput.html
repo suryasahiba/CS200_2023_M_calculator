@@ -68,7 +68,7 @@
             background-color: rgb(255, 68, 0);
         }
 
-        input[name="/"], input[name="+"], input[name="root"], input[name="%"], input[name="*"], input[name="-"] {
+        input[name="/"], input[name="+"], input[name="root"], input[name="%"], input[name="*"], input[name="-"] ,input[name="|"]{
             background-color: rgb(255, 179, 0);
         }
 
@@ -120,53 +120,35 @@
                 <td colspan="2"> <input type="text" name="N2" placeholder="Number"></td>
             </tr>
             <tr>
-		    <td colspan="4"><input style="color: red;" id="res" type="text" name="res" placeholder="Result"></td>
+                <td colspan="4"><input style="color: red;" id="res" type="text" name="res" placeholder="Result"></td>
             </tr>
            
             <tr>
             <td><input name="+" type="button" class="btn btn-sm" onclick="submitData('add')" value="+"></td>
 
                 <td><input name="*" type="button" class="btn btn-sm" onclick="submitData('multiplication')" value="*"></td>
-                <td><input name="s" type="button" class="btn btn-sm" onclick="submitData('your-function')" value="s"></td>
-                <td><input name="isDiff" type="button" class="btn btn-sm" onclick="submitData('isDiff')" value="isDiff"></td>
-                <td><input name="**" type="button" class="btn btn-sm" onclick="submitData('Exponentiation')" value="**"></td>
-                <td><input name="s" type="button" class="btn btn-sm" onclick="submitData('your-function')" value="s"></td>
-                <td><input name="s" type="button" class="btn btn-sm" onclick="submitData('your-function')" value="s"></td>
-<<<<<<< HEAD
-
+                <td><input name="Min" type="button" class="btn btn-sm" onclick="submitData('Min')" value="Min"></td>
+                <td><input name="|" type="button" class="btn btn-sm" onclick="submitData('bitwise_or')" value="|"></td>
+  
                 
-                
-=======
-	</tr>
-	<tr>
-                <td><input name="*" type="button" class="btn btn-sm" onclick="submitData('multiplication')" value="*"></td>
-                <td><input name="s" type="button" class="btn btn-sm" onclick="submitData('your-function')" value="s"></td>
-                <td><input name="isDiff" type="button" class="btn btn-sm" onclick="submitData('isDiff')" value="isDiff"></td>
-                <td><input name="s" type="button" class="btn btn-sm" onclick="submitData('your-function')" value="s"></td>
-
-           
->>>>>>> 70f8a2b09cd1196752b14541e94aee9cc5213901
             </tr>
 
             <tr>
-             <td><input name="%" type="button" class="btn btn-sm" onclick="submitData('modulus')" value="%"></td>
                 <td><input name="s" type="button" class="btn btn-sm" onclick="submitData('your-function')" value="s"></td>
                 <td><input name="s" type="button" class="btn btn-sm" onclick="submitData('your-function')" value="s"></td>
-                <td><input name="s" type="button" class="btn btn-sm" onclick="submitData('LOGICAL_OR')" value="OR"></td>
+                <td><input name="s" type="button" class="btn btn-sm" onclick="submitData('your-function')" value="s"></td>
+                <td><input name="s" type="button" class="btn btn-sm" onclick="submitData('your-function')" value="s"></td>
             </tr>
  <tr>
-
-                <td><input name="Logical_AND" type="button" class="btn btn-sm" onclick="submitData('LOGICALAND')" style="color: red;" value="AND"></td>
+                <td><input name="s" type="button" class="btn btn-sm" onclick="submitData('your-function')" value="s"></td>
                 <td><input name="s" type="button" class="btn btn-sm" onclick="submitData('your-function')" value="s"></td>
 
-                <td><input name="<<" type="button" class="btn btn-sm" onclick="submitData('left_shift')" value="<<"></td>
-
                 <td><input name="s" type="button" class="btn btn-sm" onclick="submitData('your-function')" value="s"></td>
+                <td><input name="s" type="button" class="btn btn-sm" onclick="submitData('your-function')" value="s"></td>
+
                 <td><input name="s" type="button" class="btn btn-sm" onclick="submitData('antilog')" value="antilog"></td>
                 <td><input name="s" type="button" class="btn btn-sm" onclick="submitData('bitwise-nor')" value="bit-nor"></td>
             </tr>
-            
- 
             
 
         </table>
@@ -174,4 +156,3 @@
 </body>
 
 </html>
-
