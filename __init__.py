@@ -47,6 +47,21 @@ def multiplication():
     response = c
     return response
 
+#function for finding the minimum of two number
+@app.route("/Min", methods=["POST"])
+def Min(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    
+    if a < b:
+        return str(a)
+    else:
+        return str(b)
+
+
 
 if __name__== "__main__":
     app.run()
