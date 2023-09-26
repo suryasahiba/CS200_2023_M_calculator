@@ -20,15 +20,15 @@ def ADD():
     return response
 #add your functions below
 
-@app.route("/your_function", methods=["POST"])
-def your_function(): 
+@app.route("/Exponentiation", methods=["POST"])
+def Exponentiation(): 
     jsonStr = request.get_json()
     jsonObj = json.loads(jsonStr)
     
     a=int(jsonObj['N1'])
     b=int(jsonObj['N2'])
-    # write code for your_function
-    response = "your_function"
+    value=a**b
+    response = str(value) 
     return response
     
 @app.route("/left_shift", methods=["POST"])
