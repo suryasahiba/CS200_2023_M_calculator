@@ -15,10 +15,6 @@ def ADD():
     jsonStr = request.get_json()
     jsonObj = json.loads(jsonStr)
 
-
-@app.route("/is_equal", methods=["POST"])
-def IS_EQUAL(): 
-
     a = int(jsonObj["N1"])
     b = int(jsonObj["N2"])
     sum = a + b
@@ -50,12 +46,6 @@ def BitwiseNor():
     
     a=int(jsonObj['N1'])
     b=int(jsonObj['N2'])
-    # write code for your_function
-
-    if a == b:
-    	response = "Equal"
-    else:
-    	response = "Not Equal"
     
     #response = "your_function"
 
@@ -63,6 +53,7 @@ def BitwiseNor():
     c=str(c)
     response = c
     return response
+   
 
 @app.route("/LOGICALAND", methods=["POST"])
 def LOGICALAND(): 
@@ -75,6 +66,8 @@ def LOGICALAND():
     ans= a and b
     response = "Logical AND is = " + str(ans)
     return response
+    
+
     
 @app.route("/isDiff", methods=["POST"])
 def isDiff(): 
@@ -91,7 +84,23 @@ def isDiff():
     response = str(ans)
 
     return response
+    
+@app.route("/is_equal", methods=["POST"])
+def IS_EQUAL(): 
 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    
+    
+    if a == b:
+    	response = "Equal"
+    else:
+    	response = "Not Equal"
+    
+    return response
 
 if __name__ == "__main__":
     app.run()
