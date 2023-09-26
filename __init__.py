@@ -33,6 +33,16 @@ def multiplication():
     response = c
     return response
 
+@app.route("/modulus", methods=["POST"])
+def MODULUS(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    mod=a%b
+    response = str(mod)                                #"sum = " + str(sum)
+    return response
 
 if __name__== "__main__":
     app.run()
