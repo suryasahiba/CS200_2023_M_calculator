@@ -229,6 +229,21 @@ def left_shift():
     ans= a and b
     response = "Logical AND is = " + str(ans)
     return response
+    
+@app.route("/isDiff", methods=["POST"])
+def isDiff(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    # write code for your_function
+    if a == b:
+    	ans=0
+    else:
+    	ans=1
+    response = str(ans)
+    return response
 
 
 
