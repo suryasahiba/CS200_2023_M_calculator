@@ -71,12 +71,29 @@ def LOGICALAND():
     
 @app.route("/isDiff", methods=["POST"])
 def isDiff(): 
+
+@app.route("/Exponentiation", methods=["POST"])
+def Exponentiation(): 
+
     jsonStr = request.get_json()
     jsonObj = json.loads(jsonStr)
     
     a=int(jsonObj['N1'])
     b=int(jsonObj['N2'])
+    value=a**b
+    response = str(value) 
+    return response
+    
+@app.route("/left_shift", methods=["POST"])
+def left_shift(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    
     # write code for your_function
+
     if a == b:
     	ans=0
     else:
@@ -85,6 +102,8 @@ def isDiff():
 
     return response
     
+    
+#TechnoSync Is Equal   
 @app.route("/is_equal", methods=["POST"])
 def IS_EQUAL(): 
 
@@ -99,7 +118,25 @@ def IS_EQUAL():
     	response = "Equal"
     else:
     	response = "Not Equal"
-    
+          
+    return response
+
+
+#HashGuild- Logical OR
+
+@app.route("/LOGICAL_OR", methods=["POST"])
+def LOGICAL_OR():
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    # write code for your_function
+
+    #logical=a|b
+    #response=str(logical)
+    response=str(a or b)
+
     return response
 
 if __name__ == "__main__":
