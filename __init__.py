@@ -588,6 +588,16 @@ def leftshift():
     response = str(leftshift)
     return response
 
+@app.route("/antilog", methods=["POST"])
+def antilog(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    antilog=math.pow(10,a)
+    response = str(antilog)   
+                                 
+    return response
 
 
 if __name__ == "__main__":
