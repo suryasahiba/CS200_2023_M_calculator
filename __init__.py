@@ -196,6 +196,28 @@ def MODULUS():
     ans= a and b
     response = "Logical AND is = " + str(ans)
     return response
+
+
+
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    ans= a and b
+    response = "Logical AND is = " + str(ans)
+    return response
+
+
+
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    ans= a and b
+    response = "Logical AND is = " + str(ans)
+    return response
     
 @app.route("/isDiff", methods=["POST"])
 def isDiff(): 
