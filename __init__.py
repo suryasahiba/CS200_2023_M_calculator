@@ -61,7 +61,21 @@ def Min():
     else:
         return str(b)
 
+@app.route("/shiftright", methods=["POST"])
+def Shiftright(): 
 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=float(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    value=a/(10 ** b)
+
+    # write code for your_function
+
+
+    response =str(value)
+    return response
 
 #HashGuild- Logical OR
 
