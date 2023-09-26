@@ -49,5 +49,196 @@ def Min():
 
 
 
+
 if __name__== "__main__":
+
+    response =str(value)
+    return response
+
+#HashGuild- Logical OR
+
+@app.route("/LOGICAL_OR", methods=["POST"])
+def LOGICAL_OR():
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    # write code for your_function
+
+    #logical=a|b
+    #response=str(logical)
+    response=str(a or b)
+    return response
+    
+@app.route("/left_shift", methods=["POST"])
+def left_shift(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    
+    # write code for your_function
+    left= a << b
+    response = str(left)                                #"sum = " + str(sum)
+    return response
+
+@app.route("/modulus", methods=["POST"])
+def MODULUS(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    mod=a%b
+    response = str(mod)                                #"sum = " + str(sum)
+    return response
+
+
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    ans= a and b
+    response = "Logical AND is = " + str(ans)
+    return response
+
+
+
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    ans= a and b
+    response = "Logical AND is = " + str(ans)
+    return response
+
+
+
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    ans= a and b
+    response = "Logical AND is = " + str(ans)
+    return response
+    
+@app.route("/isDiff", methods=["POST"])
+def isDiff(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    # write code for your_function
+    if a == b:
+    	ans=0
+    else:
+    	ans=1
+    response = str(ans)
+
+
+    return response
+    
+    
+@app.route("/right_shift", methods=["POST"])
+def right_shift(number, shift_amount):
+    return number >> shift_amount
+while True:
+    print("Select operation:")
+    print("1. Right Shift")
+
+    choice = input("Enter choice (1): ")
+
+    if choice == '1':
+        try:
+            number = int(input("Enter the number: "))
+            shift_amount = int(input("Enter the number of bits to shift: "))
+            result = right_shift(number, shift_amount)
+            print(f"Result: {result}")
+        except ValueError:
+            print("Invalid input. Please enter valid numbers.")
+    else:
+        print("Invalid choice. Please enter '1' for right shift.")
+
+    another_calculation = input("Do you want to perform another calculation? (yes/no): ")
+    if another_calculation.lower() != "yes":
+        break
+
+@app.route("/LOGICALAND", methods=["POST"])
+def LOGICALAND(): 
+
+
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    ans= a and b
+    response = "Logical AND is = " + str(ans)
+    return response
+    
+    
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+@app.route("/HCF", methods=["POST"])
+def HCF():
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+
+    a = int(jsonObj["N1"])
+    b = int(jsonObj["N2"])
+    # write code for your_function
+   while b:
+        a, b = b, a % b
+  
+    response = str(a)
+    return response  
+
+
+
+if __name__ == "__main__":
+>>>>>>> 0e2e851 (3)
     app.run()
