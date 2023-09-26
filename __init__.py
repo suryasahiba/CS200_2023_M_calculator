@@ -88,7 +88,7 @@ def XOR():
     xor=a^b
     response = str(xor)                                #"sum = " + str(sum)
     return response
-#add your functions below
+#add your functions belows
 
 if __name__== "__main__":
     app.run()
