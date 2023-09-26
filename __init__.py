@@ -368,6 +368,21 @@ def LOGICAL_OR():
     
  
 
+@app.route("/bnand", methods=["POST"])
+def bnand():
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    # write code for your_function
+
+    #logical=a|b
+    #response=str(logical)
+    response=str(not(a and b))
+
+    return response
+
 
 
 
