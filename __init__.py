@@ -20,6 +20,7 @@ def ADD():
     return response
 #add your functions below
 
+
 @app.route("/Exponentiation", methods=["POST"])
 def Exponentiation(): 
     jsonStr = request.get_json()
@@ -59,8 +60,27 @@ def LOGICAL_OR():
     #logical=a|b
     #response=str(logical)
     response=str(a or b)
+
+#Team BMS - Logarithmic
+@app.route("/log", methods=["POST"])
+def LOG(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=float(jsonObj['N1'])
+    b=float(jsonObj['N2'])
+    if b <= 0 or a <= 0:
+            return "Invalid Input"
+    logi = math.log(a, b)
+    
+    # write code for your_function
+    response = str(logi)
     return response
 
 
 if __name__== "__main__":
     app.run()
+    
+    
+        
+      
