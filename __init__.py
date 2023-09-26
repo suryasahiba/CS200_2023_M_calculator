@@ -37,6 +37,19 @@ def Bitwise_OR():
     response = str(bit_or)                            
     return response
 	
+@app.route("/rightshift", methods=["POST"])
+def rightshift(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    number=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    c= str(number >> b)
+    return c
+    
+@app.route("/mutiplication", methods=["POST"])
+def multiplication():
+
 
 
 
@@ -158,7 +171,7 @@ def Min():
         return str(b)
 
 @app.route("/shiftright", methods=["POST"])
-def Shiftright(): 
+def shiftright(): 
 
     jsonStr = request.get_json()
     jsonObj = json.loads(jsonStr)
@@ -172,17 +185,6 @@ def Shiftright():
 
     response =str(value)
     return response
-    
-#function for antilog
-@app.route("/antilog", methods=["POST"])
-def antilog(): 
-    jsonStr = request.get_json()
-    jsonObj = json.loads(jsonStr)
-    
-    a=int(jsonObj['N1'])
-    antilog=math.pow(10,a)
-    response = str(antilog)                                
-    return response
 
 #HashGuild- Logical OR
 
@@ -299,7 +301,19 @@ def LOGICALAND():
 
     
 @app.route("/isDiff", methods=["POST"])
-def isDiff(): 
+def isDiff():
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    # write code for your_function
+    if a == b:
+    	ans=0
+    else:
+    	ans=1
+    response = str(ans)
+    return response
 
 @app.route("/Exponentiation", methods=["POST"])
 def Exponentiation(): 
@@ -397,7 +411,7 @@ def LOGICAL_OR():
     
     
  
-
+#Breaking branches rocks
 @app.route("/bnand", methods=["POST"])
 def bnand():
     jsonStr = request.get_json()
@@ -414,7 +428,29 @@ def bnand():
     return response
 
 
+@app.route("/xor", methods=["POST"])
+def xor(): 
 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    value=a^b
+    response = str(value) 
+    return response
+    
+    
+@app.route("/left_dec", methods=["POST"])
+def left_dec(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    left=a/(10**b)
+    response = str(left)                                #NightConquerors
+    return response
 
 
 
@@ -485,6 +521,21 @@ def LOGICAL_OR():
     #response=str(logical)
     response=str(a or b)
     return response
+    
+@app.route("/MAX", methods=["POST"])
+def MAX(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    # write code for your_function
+    if a > b:
+        MAX = a
+    else:
+        MAX = b
+    response = str(MAX)
+    return response
 
 @app.route("/modulus", methods=["POST"])
 
@@ -498,6 +549,15 @@ def MODULUS():
     response = str(mod)                                #"sum = " + str(sum)
     return response
 
+@app.route("/antilog", methods=["POST"])
+def antilog(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    antilog=math.pow(10,a)
+    response = str(antilog)                                
+    return response
 
 
 if __name__ == "__main__":
