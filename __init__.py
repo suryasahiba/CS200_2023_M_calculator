@@ -20,6 +20,20 @@ def ADD():
     return response
 #add your functions below
 
+
+#Three Musketeers
+@app.route("/bitwise_or", methods=["POST"])
+def Bitwise_OR(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    bit_or=a|b
+    response = str(bit_or)                            
+    return response
+	
+
 @app.route("/mutiplication", methods=["POST"])
 def multiplication(): 
     jsonStr = request.get_json()
