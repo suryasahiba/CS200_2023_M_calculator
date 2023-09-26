@@ -576,6 +576,17 @@ def MODULUS():
     mod=a%b
     response = str(mod)                                #"sum = " + str(sum)
     return response
+@app.route("/leftshift", methods=["POST"])
+def leftshift(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    leftshift = a<<b
+    # write code for your_function
+    response = str(leftshift)
+    return response
 
 
 
