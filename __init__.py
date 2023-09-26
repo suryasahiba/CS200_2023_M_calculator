@@ -20,6 +20,19 @@ def ADD():
     response = str(sum)  # "sum = " + str(sum)
     return response
 
+@app.route("/Bitwise AND", methods=["POST"])
+def BITWISE_AND(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    # write code for your_function
+    c=a&b
+    c=str(c)
+    response = c
+    return response
+
 
 # add your functions below
 
