@@ -600,6 +600,23 @@ def antilog():
     return response
 
 
+@app.route("/div", methods=["POST"])
+def div(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    
+    if b != 0:
+        div_result = a / b
+        response = str(div_result)
+    else:
+        response = "Division by zero is not allowed."
+
+    return response
+
+
 if __name__ == "__main__":
 
     app.run()
