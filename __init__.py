@@ -104,7 +104,7 @@ def LOGICALAND():
  
  
  
- @app.route("/HCF", methods=["POST"])
+@app.route("/HCF", methods=["POST"])
 def HCF():
     jsonStr = request.get_json()
     jsonObj = json.loads(jsonStr)
