@@ -15,7 +15,7 @@ def ADD():
     jsonStr = request.get_json()
     jsonObj = json.loads(jsonStr)
 
-<<<<<<< HEAD
+
     a = int(jsonObj["N1"])
     b = int(jsonObj["N2"])
     sum = a + b
@@ -41,10 +41,10 @@ def multiplication():
 
 @app.route("/bitwise-nor", methods=["POST"])
 def BitwiseNor(): 
-=======
+
 @app.route("/Exponentiation", methods=["POST"])
 def Exponentiation(): 
->>>>>>> 11e0342b41a85369ad80fb087ef77281dc9db939
+
     jsonStr = request.get_json()
     jsonObj = json.loads(jsonStr)
     
@@ -63,18 +63,18 @@ def left_shift():
     b=int(jsonObj['N2'])
     
     # write code for your_function
-<<<<<<< HEAD
+
     c=~(a| b)
     c=str(c)
     response = c
-=======
+
     left= a << b
     response = str(left)                                #"sum = " + str(sum)
->>>>>>> 11e0342b41a85369ad80fb087ef77281dc9db939
     return response
 
 @app.route("/LOGICALAND", methods=["POST"])
 def LOGICALAND(): 
+
 
     jsonStr = request.get_json()
     jsonObj = json.loads(jsonStr)
@@ -100,6 +100,25 @@ def isDiff():
     response = str(ans)
     return response
 
+
+if __name__ == "__main__":
+
+#HashGuild- Logical OR
+
+@app.route("/LOGICAL_OR", methods=["POST"])
+def LOGICAL_OR():
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    # write code for your_function
+
+    #logical=a|b
+    #response=str(logical)
+    response=str(a or b)
+    return response
+
 @app.route("/modulus", methods=["POST"])
 def MODULUS(): 
     jsonStr = request.get_json()
@@ -110,5 +129,7 @@ def MODULUS():
     mod=a%b
     response = str(mod)                                #"sum = " + str(sum)
     return response
-if __name__ == "__main__":
+
+if __name__== "__main__":
+
     app.run()
