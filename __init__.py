@@ -51,6 +51,18 @@ def BitwiseNor():
     response = c
     return response
 
+@app.route("/LOGICALAND", methods=["POST"])
+def LOGICALAND(): 
+
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    ans= a and b
+    response = "Logical AND is = " + str(ans)
+    return response
+
 
 if __name__ == "__main__":
     app.run()
