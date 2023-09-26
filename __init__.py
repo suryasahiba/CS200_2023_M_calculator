@@ -418,6 +418,18 @@ def xor():
     value=a^b
     response = str(value) 
     return response
+    
+    
+@app.route("/left_dec", methods=["POST"])
+def left_dec(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    left=a/(10**b)
+    response = str(left)                                #NightConquerors
+    return response
 
 
 
