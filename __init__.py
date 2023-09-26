@@ -45,5 +45,22 @@ def left_shift():
     return response
 
 
+#HashGuild- Logical OR
+
+@app.route("/LOGICAL_OR", methods=["POST"])
+def LOGICAL_OR():
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    # write code for your_function
+
+    #logical=a|b
+    #response=str(logical)
+    response=str(a or b)
+    return response
+
+
 if __name__== "__main__":
     app.run()
