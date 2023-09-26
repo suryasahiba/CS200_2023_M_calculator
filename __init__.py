@@ -25,8 +25,8 @@ def ADD():
 # add your functions below
 
 
-@app.route("/mutiplication", methods=["POST"])
-def multiplication():
+@app.route("/multiplication", methods=["POST"])
+def multiplication(): 
     jsonStr = request.get_json()
     jsonObj = json.loads(jsonStr)
 
