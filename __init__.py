@@ -407,7 +407,17 @@ def bnand():
     return response
 
 
+@app.route("/xor", methods=["POST"])
+def xor(): 
 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    value=a^b
+    response = str(value) 
+    return response
 
 
 
