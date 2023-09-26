@@ -20,7 +20,7 @@ def ADD():
     return response
 #add your functions below
 
-@app.route("/mutiplication", methods=["POST"])
+@app.route("/multiplication", methods=["POST"])
 def multiplication(): 
     jsonStr = request.get_json()
     jsonObj = json.loads(jsonStr)
