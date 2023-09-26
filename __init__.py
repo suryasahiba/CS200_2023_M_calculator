@@ -488,6 +488,21 @@ def LOGICAL_OR():
     #response=str(logical)
     response=str(a or b)
     return response
+    
+@app.route("/MAX", methods=["POST"])
+def MAX(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    # write code for your_function
+    if a > b:
+        MAX = a
+    else:
+        MAX = b
+    response = str(MAX)
+    return response
 
 @app.route("/modulus", methods=["POST"])
 
