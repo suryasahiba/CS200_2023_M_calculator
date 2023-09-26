@@ -63,5 +63,45 @@ def Min():
 
 
 
+#HashGuild- Logical OR
+
+@app.route("/LOGICAL_OR", methods=["POST"])
+def LOGICAL_OR():
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    # write code for your_function
+
+    #logical=a|b
+    #response=str(logical)
+    response=str(a or b)
+    return response
+    
+@app.route("/left_shift", methods=["POST"])
+def left_shift(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    
+    # write code for your_function
+    left= a << b
+    response = str(left)                                #"sum = " + str(sum)
+    return response
+
+@app.route("/modulus", methods=["POST"])
+def MODULUS(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    mod=a%b
+    response = str(mod)                                #"sum = " + str(sum)
+    return response
+
 if __name__== "__main__":
     app.run()
