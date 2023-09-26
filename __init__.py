@@ -38,10 +38,6 @@ def Bitwise_OR():
     return response
 	
 
-@app.route("/mutiplication", methods=["POST"])
-def multiplication():
-
-
 
 
 @app.route("/is_equal", methods=["POST"])
