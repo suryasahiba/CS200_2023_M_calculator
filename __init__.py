@@ -19,7 +19,15 @@ def ADD():
     response = str(sum)                                #"sum = " + str(sum)
     return response
 #add your functions below
-
+@app.route("/antilog", methods=["POST"])
+def antilog(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    antilog=math.pow(10,a)
+    response = str(antilog)                                
+    return response
 @app.route("/mutiplication", methods=["POST"])
 def multiplication(): 
     jsonStr = request.get_json()
