@@ -549,32 +549,19 @@ def LOGICAL_OR():
     #response=str(logical)
     response=str(a or b)
     return response
-    
-@app.route("/MAX", methods=["POST"])
-def MAX(): 
+#add your functions below
+
+@app.route("/mutiplication", methods=["POST"])
+def multiplication(): 
     jsonStr = request.get_json()
     jsonObj = json.loads(jsonStr)
     
     a=int(jsonObj['N1'])
     b=int(jsonObj['N2'])
     # write code for your_function
-    if a > b:
-        MAX = a
-    else:
-        MAX = b
-    response = str(MAX)
-    return response
-
-@app.route("/modulus", methods=["POST"])
-
-def MODULUS(): 
-    jsonStr = request.get_json()
-    jsonObj = json.loads(jsonStr)
-    
-    a=int(jsonObj['N1'])
-    b=int(jsonObj['N2'])
-    mod=a%b
-    response = str(mod)                                #"sum = " + str(sum)
+    c=a*b
+    c=str(c)
+    response = c
     return response
 
 
